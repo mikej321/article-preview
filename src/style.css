@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'Manrope semi-bold';
+    src: url(./fonts/Manrope.ttf);
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Manrope bold';
+    src: url(./fonts/Manrope.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    --font-size: 13px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: var(--font-size);
+}
+
+.myElement {
+    
+}
