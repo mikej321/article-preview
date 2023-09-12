@@ -26,7 +26,7 @@ function component() {
 
     const myCardHeader = document.createElement('div');
     myCardHeader.classList.add('myCardHeader');
-    myCardHeader.textContent = `shift the overall look and feel
+    myCardHeader.textContent = `Shift the overall look and feel
     by adding these wonderful touches to furniture in your home`;
 
     const myCardBody = document.createElement('div');
@@ -53,13 +53,16 @@ function component() {
     userDate.classList.add('userDate');
     userDate.textContent = '28 Jun 2020';
 
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('buttonContainer');
     const button = document.createElement('img');
     button.src = myImage5;
     button.classList.add('myButton');
+    buttonContainer.append(button);
 
     userInfo.append(profilePic);
     userInfo.append(userData);
-    userInfo.append(button);
+    userInfo.append(buttonContainer);
 
     userData.append(userName);
     userData.append(userDate);

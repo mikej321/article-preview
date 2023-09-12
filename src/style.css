@@ -51,49 +51,90 @@ body {
     background-color: white;
     font-family: 'Manrope semi-bold';
     border-radius: 8px;
+    display: grid;
+    grid-template-areas: "image"
+                         "body";
+    gap: 4rem;
 }
 
 .myHeaderDiv {
     background: url(./images/drawers.jpg) no-repeat;
-    border-radius: 8px 8px 0 0;
-
+    border-radius: 12px 12px 0 0;
+    width: 375px;
+    height: 245px;
+    overflow: hidden;
+    grid-area: image;
 }
 
 .myHeaderImg {
     max-width: 375px;
-    border-radius: 8px 8px 0 0;
+    border-radius: 12px 12px 0 0;
 }
 
 .myCard {
-
+    grid-area: body;
+    display: grid;
+    grid-template-areas: "header"
+                         "paragraph"
+                         "user";
+    padding-inline: 4rem;
+    gap: 1.5rem;
 }
 
 .myCardHeader {
-
+    font-family: 'Manrope bold';
+    font-size: 1.6rem;
+    grid-area: header;
+    color: var(--very-dark-grayish-blue);
 }
 
 .myCardBody {
-
+    grid-area: paragraph;
+    max-width: 257px;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+    color: var(--desaturated-dark-blue);
 }
 
 .userInfo {
-
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    grid-area: user;
+    margin-bottom: 2rem;
 }
 
 .profilePic {
-
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 .userData {
-
+    margin-right: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
 }
 
 .userName {
-
+    font-family: 'Manrope bold';
+    color: var(--very-dark-grayish-blue);
+    font-size: 1.3rem;
 }
 
 .userDate {
+    color: var(--desaturated-dark-blue);
+}
 
+.buttonContainer {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--light-grayish-blue);
 }
 
 .myButton {
