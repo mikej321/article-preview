@@ -35,6 +35,9 @@ function component() {
     something was missing? Perhaps it felt slightly bare and uninviting.
     I've got some simple tips to help you make any room feel complete.`;
 
+    const infoContainer = document.createElement('div');
+    infoContainer.classList.add('infoContainer');
+
     const userInfo = document.createElement('div');
     userInfo.classList.add('userInfo');
 
@@ -60,18 +63,62 @@ function component() {
     button.classList.add('myButton');
     buttonContainer.append(button);
 
+    infoContainer.append(userInfo);
+
+    const shareContainer = document.createElement('div');
+    shareContainer.classList.add('shareContainer');
+
+    const share = document.createElement('p');
+    share.textContent = 'share';
+    share.classList.add('share');
+
+    shareContainer.append(share);
+
+    const shareIconContainer = document.createElement('div');
+    shareIconContainer.classList.add('shareIconContainer');
+
+    const facebookIcon = document.createElement('img');
+    facebookIcon.src = myImage3;
+    facebookIcon.classList.add('facebookIcon');
+    shareIconContainer.append(facebookIcon);
+
+    const twitterIcon = document.createElement('img');
+    twitterIcon.src = myImage6;
+    twitterIcon.classList.add('twitterIcon');
+    shareIconContainer.append(twitterIcon);
+
+    const pinterestIcon = document.createElement('img');
+    pinterestIcon.src = myImage4;
+    pinterestIcon.classList.add('pinterestIcon');
+    shareIconContainer.append(pinterestIcon);
+
+    shareContainer.append(shareIconContainer);
+
+    const invertedShareContainer = document.createElement('div');
+    invertedShareContainer.classList.add('invertedShareContainer');
+
+    const shareContainerButton = document.createElement('img');
+    shareContainerButton.src = myImage5;
+    shareContainerButton.classList.add('shareContainerButton');
+    invertedShareContainer.append(shareContainerButton);
+
+    shareContainer.append(invertedShareContainer);
+
     userInfo.append(profilePic);
     userInfo.append(userData);
     userInfo.append(buttonContainer);
+    
+    infoContainer.append(shareContainer);
 
     userData.append(userName);
     userData.append(userDate);
 
     myCard.append(myCardHeader);
     myCard.append(myCardBody);
-    myCard.append(userInfo);
+    myCard.append(infoContainer);
 
     myBody.append(myCard);
+    
 
     return myBody;
 }

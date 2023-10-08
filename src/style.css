@@ -53,8 +53,8 @@ body {
     border-radius: 8px;
     display: grid;
     grid-template-areas: "image"
-                         "body";
-    gap: 4rem;
+                         "body"
+                         "share";
 }
 
 .myHeaderDiv {
@@ -77,8 +77,8 @@ body {
     grid-template-areas: "header"
                          "paragraph"
                          "user";
-    padding-inline: 4rem;
     gap: 1.5rem;
+    margin-top: 4rem;
 }
 
 .myCardHeader {
@@ -86,12 +86,14 @@ body {
     font-size: 1.6rem;
     grid-area: header;
     color: var(--very-dark-grayish-blue);
+    margin-inline: 4rem;
 }
 
 .myCardBody {
     grid-area: paragraph;
     max-width: 257px;
     line-height: 2rem;
+    margin-inline: 4rem;
     margin-bottom: 2rem;
     color: var(--desaturated-dark-blue);
 }
@@ -101,6 +103,10 @@ body {
     gap: 2rem;
     align-items: center;
     grid-area: user;
+    
+    margin-inline: 4rem;
+    /* animate margin-bottom as well as max-height/overflow
+    on click */
     margin-bottom: 2rem;
 }
 
@@ -135,8 +141,88 @@ body {
     justify-content: center;
     border-radius: 50%;
     background-color: var(--light-grayish-blue);
+    cursor: pointer;
+    transition: scale 0.2s ease-in-out;
+}
+
+.buttonContainer:hover {
+    scale: 1.1;
+}
+
+.shareContainer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    /* Animate the padding-inline/block & max-height/overflow on click */
+    
+    background-color: var(--very-dark-grayish-blue);
+    max-height: 0;
+    overflow: hidden;
+}
+
+.share {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 1.5rem;
+    color: var(--grayish-blue);
+}
+
+.shareIconContainer {
+    display: flex;
+    width: 100%;
+    max-width: 100px;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 3rem;
+}
+
+.facebookIcon {
+    cursor: pointer;
+    transition: scale 0.2s ease-in-out;
+}
+
+.facebookIcon:hover {
+    scale: 1.2;
+}
+
+.twitterIcon {
+    cursor: pointer;
+    transition: scale 0.2s ease-in-out;
+}
+
+.twitterIcon:hover {
+    scale: 1.2;
+}
+
+.pinterestIcon {
+    cursor: pointer;
+    transition: scale 0.2s ease-in-out;
+}
+
+.pinterestIcon:hover {
+    scale: 1.2;
+}
+
+.invertedShareContainer {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--desaturated-dark-blue);
+    transition: scale 0.2s ease-in-out;
+}
+
+.invertedShareContainer:hover {
+    scale: 1.1;
+}
+
+.shareContainerButton {
+    filter: brightness(0) invert(1);
 }
 
 .myButton {
-
+    
 }
