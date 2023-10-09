@@ -4,10 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
-    output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist'),
-    },
     devtool: 'inline-source-map',
     devServer: {
         static: './dist',
@@ -15,8 +11,13 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Article Preview',
+            template: './src/index.html',
         }),
     ],
+    output: {
+        filename: 'main.js',
+        path: path.resolve(__dirname, 'dist'),
+    },
     module: {
         rules: [
             {
