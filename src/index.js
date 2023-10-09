@@ -5,6 +5,7 @@ import myImage3 from './images/icon-facebook.svg';
 import myImage4 from './images/icon-pinterest.svg';
 import myImage5 from './images/icon-share.svg';
 import myImage6 from './images/icon-twitter.svg'
+import { fadeOut } from '../modules/fadeOut';
 
 function component() {
     const myBody = document.createElement('div');
@@ -26,14 +27,22 @@ function component() {
 
     const myCardHeader = document.createElement('div');
     myCardHeader.classList.add('myCardHeader');
-    myCardHeader.textContent = `Shift the overall look and feel
+
+    const myCardHeaderP = document.createElement('p');
+    myCardHeaderP.textContent = `Shift the overall look and feel
     by adding these wonderful touches to furniture in your home`;
+
+    myCardHeader.append(myCardHeaderP);
 
     const myCardBody = document.createElement('div');
     myCardBody.classList.add('myCardBody');
-    myCardBody.textContent = `Ever been in a room and felt like
+
+    const myCardBodyP = document.createElement('p');
+    myCardBodyP.textContent = `Ever been in a room and felt like
     something was missing? Perhaps it felt slightly bare and uninviting.
     I've got some simple tips to help you make any room feel complete.`;
+
+    myCardBody.append(myCardBodyP);
 
     const infoContainer = document.createElement('div');
     infoContainer.classList.add('infoContainer');
@@ -124,3 +133,6 @@ function component() {
 }
 
 document.body.append(component());
+
+document.addEventListener('click', fadeOut);
+

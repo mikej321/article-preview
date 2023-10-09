@@ -44,6 +44,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: var(--light-grayish-blue);
+    
 }
 
 .myBody {
@@ -55,6 +56,7 @@ body {
     grid-template-areas: "image"
                          "body"
                          "share";
+    
 }
 
 .myHeaderDiv {
@@ -98,6 +100,11 @@ body {
     color: var(--desaturated-dark-blue);
 }
 
+.infoContainer {
+    position: relative;
+
+}
+
 .userInfo {
     display: flex;
     gap: 2rem;
@@ -105,9 +112,18 @@ body {
     grid-area: user;
     
     margin-inline: 4rem;
-    /* animate margin-bottom as well as max-height/overflow
-    on click */
+    /* animate margin-bottom as well as opacity
+    on click...do a slide animation that makes the info slide out right
+    and appear underneath the share portion */
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease-out;
+}
+
+.fadeOut {
+    opacity: 0;
+    translate: 375px;
 }
 
 .profilePic {
@@ -130,7 +146,7 @@ body {
 }
 
 .userDate {
-    color: var(--desaturated-dark-blue);
+    color: var(--grayish-blue);
 }
 
 .buttonContainer {
@@ -154,10 +170,21 @@ body {
     align-items: center;
     gap: 2rem;
     /* Animate the padding-inline/block & max-height/overflow on click */
-    
+    width: 100%;
     background-color: var(--very-dark-grayish-blue);
-    max-height: 0;
-    overflow: hidden;
+    padding-inline: 4rem;
+    padding-block: 2rem;
+    border-radius: 0 0 12px 12px;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    /* Control the element with opacity */
+    opacity: 0;
+    transition: all 0.2s ease-in;
+}
+
+.fadeIn {
+    opacity: 1;
 }
 
 .share {
@@ -178,7 +205,7 @@ body {
 
 .facebookIcon {
     cursor: pointer;
-    transition: scale 0.2s ease-in-out;
+    transition: scale 0.4s ease-in-out;
 }
 
 .facebookIcon:hover {
@@ -223,6 +250,177 @@ body {
     filter: brightness(0) invert(1);
 }
 
-.myButton {
+@media screen and (min-width: 600px) {
     
+    .myBody {
+        max-width: 770px;
+        grid-template-areas: "image body"
+                             "image share";
+        
+    }
+    
+    .myHeaderDiv {
+        border-radius: 8px 0 0 8px;
+        width: 300px;
+        height: 343px;
+    }
+    
+    .myHeaderImg {
+        border-radius: 8px 0 0 8px;
+        height: 343px;
+    }
+    
+    .myCardHeader {
+        font-size: 2.2rem;
+        line-height: 3.2rem;
+    }
+
+    .myCardHeader p {
+
+    }
+    
+    .myCardBody {
+        max-width: 46ch;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    .myCardBody p {
+        line-height: 2.3rem;
+    }
+    
+    .infoContainer {
+        position: relative;
+    
+    }
+    
+    .userInfo {
+        /* animate margin-bottom as well as opacity
+        on click...do a slide animation that makes the info slide out right
+        and appear underneath the share portion */
+        position: relative;
+        z-index: 2;
+        transition: all 0.4s ease-out;
+    }
+    
+    .fadeOut {
+        opacity: 0;
+        translate: 375px;
+    }
+    
+    .profilePic {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .userData {
+        margin-right: 14.3rem;
+        width: 100%;
+        max-width: 15rem;
+    }
+    
+    .userName {
+        font-size: 1.4rem;
+    }
+    
+    .userDate {
+        color: var(--desaturated-dark-blue);
+    }
+    
+    .buttonContainer {
+        width: 100%;
+        max-width: 35px;
+        height: 35px;
+        transition: scale 0.2s ease-in-out;
+    }
+    
+    .buttonContainer:hover {
+        scale: 1.1;
+    }
+    
+    .shareContainer {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        /* Animate the padding-inline/block & max-height/overflow on click */
+        width: 100%;
+        background-color: var(--very-dark-grayish-blue);
+        padding-inline: 4rem;
+        padding-block: 2rem;
+        border-radius: 0 0 12px 12px;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        /* Control the element with opacity */
+        opacity: 0;
+        transition: all 0.2s ease-in;
+    }
+    
+    .fadeIn {
+        opacity: 1;
+    }
+    
+    .share {
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 1.5rem;
+        color: var(--grayish-blue);
+    }
+    
+    .shareIconContainer {
+        display: flex;
+        width: 100%;
+        max-width: 100px;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 3rem;
+    }
+    
+    .facebookIcon {
+        cursor: pointer;
+        transition: scale 0.4s ease-in-out;
+    }
+    
+    .facebookIcon:hover {
+        scale: 1.2;
+    }
+    
+    .twitterIcon {
+        cursor: pointer;
+        transition: scale 0.2s ease-in-out;
+    }
+    
+    .twitterIcon:hover {
+        scale: 1.2;
+    }
+    
+    .pinterestIcon {
+        cursor: pointer;
+        transition: scale 0.2s ease-in-out;
+    }
+    
+    .pinterestIcon:hover {
+        scale: 1.2;
+    }
+    
+    .invertedShareContainer {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: var(--desaturated-dark-blue);
+        transition: scale 0.2s ease-in-out;
+    }
+    
+    .invertedShareContainer:hover {
+        scale: 1.1;
+    }
+    
+    .shareContainerButton {
+        filter: brightness(0) invert(1);
+    }
+
 }
