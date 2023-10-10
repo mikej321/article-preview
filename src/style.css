@@ -56,6 +56,8 @@ body {
     grid-template-areas: "image"
                          "body"
                          "share";
+    box-shadow: 1px 1px 80px var(--light-grayish-blue),
+                0 0 20px var(--grayish-blue);
     
 }
 
@@ -192,6 +194,7 @@ body {
     letter-spacing: 4px;
     font-size: 1.5rem;
     color: var(--grayish-blue);
+    cursor: pointer;
 }
 
 .shareIconContainer {
